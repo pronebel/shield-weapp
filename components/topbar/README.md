@@ -1,1 +1,1 @@
-迁移至：https://github.com/jyboy/wx-topbar
+组件改自：https://github.com/jyboy/wx-topbar
