@@ -115,7 +115,7 @@ export default {
     })
   },
   pickerModel(e) {
-
+    console.log(e);
     let dataset = e.currentTarget.dataset || {};
     var setTmp = {}
     setTmp[dataset.index] = e.detail.value;
@@ -123,7 +123,7 @@ export default {
     this.model(e);
   },
   pickerModelSingle(e) {
-
+    console.log(e);
     let dataset = e.currentTarget.dataset || {};
     var setTmp = {}
     setTmp[dataset.index] = e.detail.value;
@@ -132,7 +132,7 @@ export default {
   },
   model(e) {
 
-
+    console.log(e)
     let key = e.currentTarget.id
     let val = e.detail.value
 
@@ -147,7 +147,7 @@ export default {
   },
   modelSingle(e) {
 
-
+    console.log(e)
     let key = e.currentTarget.id
     let val = e.detail.value
 

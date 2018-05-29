@@ -7,22 +7,20 @@ export const GET_SYSTEM_INFO = function () {
   }
 }
 
-
 let getCurrentPage = function () {
   let pages = getCurrentPages();
   let tmp = pages[pages.length - 1]
   return tmp.route
 }
 export let URL = {
- 
+
   //API: "http://10.100.19.101:8099/api/",
   mixUrl: function (apiUrl,url,params={}){
 
-
     let restparam = {
-      callerApp: "ICRM",
+      callerApp: "ICRMCLIENT",
       pageUrl: getCurrentPage(),
-      userType: 'BANK_AGENT'
+      userType: 'BANK_CUSTOMER'
     }
 
     params = Object.assign({}, restparam, params);
@@ -30,13 +28,13 @@ export let URL = {
       apiUrl = URL.API
     }
     let token = auth.getToken();
-    
-    if(token){
+
+    if (token) {
       params["token"] = token
     }
- 
 
-    return urlJoin(apiUrl, url) + Params.stringify(params,"?")
+
+    return urlJoin(apiUrl, url) + Params.stringify(params, "?")
   },
    getApiUrl:function(apiUrl, url){
     if (!apiUrl) {

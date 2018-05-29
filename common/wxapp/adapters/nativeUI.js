@@ -27,13 +27,13 @@ export let loading = {
 
 export let dialog = {
   alert (content, options = {}) {
-    options.title = '提示'
+    options.title = options.title|| '提示'
     options.content = content
     options.showCancel = false
     wx.showModal(options)
   },
   confirm (content, options = {}) {
-    options.title = '提示'
+    options.title = options.title ||'提示'
     options.content = content
     options.showCancel = true
     wx.showModal(options)

@@ -152,6 +152,7 @@ let getCacheKey = (url, data) => {
 }
 
 
+
 /**
  * 含有url参数的post方法
  * @param url
@@ -161,16 +162,14 @@ let getCacheKey = (url, data) => {
  * @returns {*}
  */
 export let postWithUrlParam = (url, data = {}, opts = {}, urlParam) => {
-
-
+  
   let cacheKey = getCacheKey(url, data)
   opts.params = Object.assign({}, urlParam)
-  opts.url = URL.mixUrl(opts.apiUrl, url, opts.params)
-
+  opts.url = URL.mixUrl(opts.apiUrl, url,opts.params)
   let systemData = GET_SYSTEM_INFO()
   opts.cacheKey = cacheKey
   opts.method = METHOD.POST
-  if (is.array(data)) {
+   if (is.array(data)) {
     opts.data = data
   } else {
     opts.data = Object.assign({}, data, systemData)
@@ -185,11 +184,10 @@ export let postWithUrlParam = (url, data = {}, opts = {}, urlParam) => {
  * @returns {*}
  */
 export const get = (url, data = {}, opts = {}) => {
- 
+
   let params = Object.assign({}, data)
   let cacheKey = getCacheKey(url, data)
-  opts.url = URL.mixUrl(opts.apiUrl, url, params)
-  console.log(opts.url)
+  opts.url = URL.mixUrl(opts.apiUrl, url, params  )
   opts.cacheKey = cacheKey
   opts.method = METHOD.GET
   return createApi(opts)
@@ -204,9 +202,10 @@ export const get = (url, data = {}, opts = {}) => {
  */
 export let post = (url, data = {}, opts = {}) => {
 
-
   let cacheKey = getCacheKey(url, data)
   opts.url = URL.mixUrl(opts.apiUrl, url, opts.params)
+
+
   opts.cacheKey = cacheKey
   opts.method = METHOD.POST
   let systemData = GET_SYSTEM_INFO()
