@@ -1,0 +1,45 @@
+<!--pages/swiper/index.wxml-->
+<wxs module="swiperConf">
+  var _swiperConfArray = ['autoplay', 'indicatorDots', 'indicatorColor', 'indicatorActiveColor', 'interval', 'duration', 'vertical']
+  //swiper的常用属性配置
+  var _swiperConf = {
+    autoplay: true, //是否自动播放
+    indicatorDots: true, //是否需要指示点
+    indicatorColor: 'rgba(0, 0, 0, .3)', //指示点颜色
+    indicatorActiveColor: '#000000', //指示点被选中的颜色
+    interval: 3000, //滑动间隔时间
+    duration: 500, //滑动时长
+    vertical: false, //是否垂直方向滑动
+  }
+
+  //改变swiperconf默认的值
+  function _setConf(conf) {
+    for (var i = 0; i < _swiperConfArray.length; i++) {
+      //循环遍历对象属性
+      var _item = _swiperConfArray[i]
+      if (conf[_item] !== undefined) {
+      //如果用户有通过data传入的swiper设置，
+      //就把相应的默认设置替换
+        _swiperConf[_item] = conf[_item]
+      }
+    }
+    return _swiperConf
+  }
+  module.exports.setConf = _setConf
+</wxs>
+<template name="swiper">
+  <swiper class='swiper' autoplay="{{swiperConf.setConf(conf).autoplay}}" indicator-dots='{{swiperConf.setConf(conf).indicatorDots}}' indicator-color='{{swiperConf.setConf(conf).indicatorColor}}' indicator-active-color='{{swiperConf.setConf(conf).indicatorActiveColor}}'
+    interval='{{swiperConf.setConf(conf).interval}}' duration='{{swiperConf.setConf(conf).duration}}' vertical='{{swiperConf.vertical}}'>
+
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"  />
+      </swiper-item>
+    </block>
+
+  </swiper>
+</template>
+
+
+
+  <template is="swiper"  data="{{...dataObj}}"/>

@@ -1,0 +1,26 @@
+<template name="shopcart">
+  <scroll-view class='list-wrapper' scroll-y style='height:auto;'>
+    <checkbox-group bindchange='{{checkBoxChange}}'>
+      <view class='item' wx:key='*this' wx:for='{{shopCart}}'>
+        <checkbox class='singleCheckbox' checked='{{item.isChecked}}' value='{{index}}'></checkbox>
+        <image class='center' src='{{item.imageUrl}}' />
+        <view class='content'>
+          <navigator class='title'>{{item.title}}</navigator>
+          <view class='price'>
+            <text class='new-price'>￥{{item.price}}</text>
+            <text class='old-price'></text>
+          </view>
+          <view class='bottom'>
+            <view class='count'>
+              <view data-index='{{index}}' data-type='+' class='button' bindtap='{{changeCount}}'>+</view>
+              <input data-index='{{index}}' value='{{item.count}}' bindblur='{{inputChange}}' />
+              <view data-index='{{index}}' data-type='-' class='button' bindtap='{{changeCount}}'>-</view>
+            </view>
+            <button data-index='{{index}}' bindtap="{{deleteShopCartItem}}">删除</button>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+    <view style='height:120rpx'></view>
+  </scroll-view>
+</template>

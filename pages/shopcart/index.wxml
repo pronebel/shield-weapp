@@ -1,0 +1,5 @@
+<import src="./template.wxml" />
+
+
+
+<template is="shopcart" data="{{...event,shopCart}}" />
