@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <topbar>
+       <view class="article" wx:for="{{ temporaryArray }}">Hello, {{ articleContent }} - {{ item }}</view>
+  </topbar>
+</view>

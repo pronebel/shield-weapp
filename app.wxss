@@ -1,0 +1,14 @@
+/**app.wxss**/
+
+
+
+view,
+scroll-view {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.visibility-hidden {
+    visibility: hidden;
+}

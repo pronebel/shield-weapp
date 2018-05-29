@@ -1,0 +1,20 @@
+/**index.wxss**/
+page{
+  height:100vh;
+  box-sizing: border-box;
+  padding-top:80rpx;
+}
+
+.articles {
+    margin-top: 80rpx;
+    min-height: calc(100% - 80rpx);
+}
+.article {
+    display: flex;
+
+    border-bottom: 1px solid #ececec;
+    height: 80px;
+
+    align-items: center;
+    justify-content: center;
+}
