@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/topbar/index",
     "pages/logs/logs",
-    "pages/index/index",
+
     "pages/shopcart/index",
-    "pages/swiper/index"
+    "pages/swiper/index",
+    "pages/demo/toptip"
   ],
   "window": {
     "navigationBarTextStyle": "black",

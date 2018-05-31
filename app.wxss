@@ -12,3 +12,4 @@ scroll-view {
 .visibility-hidden {
     visibility: hidden;
 }
+@import './components/index.wxss'

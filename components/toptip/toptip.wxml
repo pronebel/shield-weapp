@@ -1,0 +1,4 @@
+<template name="toptip">
+  <view class="sim-toptip {{ tip.show ? 'sim-toptip-show color-' + tip.type : '' }}">{{ tip.text }}</view>
+</template>
+ 
