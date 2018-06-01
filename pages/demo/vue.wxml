@@ -1,0 +1,10 @@
+<template name="VueComponent">
+
+<view>Data:</view>
+<view>姓名：{{TopPage.name}}</view>
+<view>年龄:{{TopPage.age}}</view>
+<view>Computed:</view>
+<view>姓名：{{TopPage.nameC}}</view>
+<view>年龄:{{TopPage.ageC}}</view>
+
+</template>

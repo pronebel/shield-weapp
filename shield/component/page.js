@@ -26,6 +26,7 @@ class MyPage {
 		this.$components()
 
 		originalPage(options, ...args)
+    Page()
 	}
 
 	/**

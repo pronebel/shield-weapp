@@ -1,10 +1,10 @@
 import Router from '../component/router'
 import is from '../libs/is.js'
 import store from '../adapters/store.js'
-import {toast,loading,dialog } from '../adapters/nativeUI.js'
+import { toast, loading, dialog } from '../adapters/nativeUI.js'
 import fecha from '../../../npmjs/fecha.js'
-import {navbar} from './global.js'
-import { URL} from '../http/config.js'
+import { navbar } from './global.js'
+import { URL } from '../http/config.js'
 
 
 
@@ -13,7 +13,7 @@ function getID() {
   return Math.random().toString(36).substring(2, 15)
 }
 
-export let PageBase =function ($this) {
+export let PageBase = function ($this) {
 
 
   var appInstance = getApp()
@@ -22,7 +22,7 @@ export let PageBase =function ($this) {
   $this.$navbar = navbar;
   $this.$router = new Router()
   $this.$route = $this.$router.$route
-  
+
   $this.dialog = dialog;
   $this.toast = toast;
   $this.loading = loading;
@@ -32,7 +32,7 @@ export let PageBase =function ($this) {
   $this.setData({
     assetsUrl: 'https://hamstatic.life.cntaiping.com/star/'
   })
- 
+
   console.log($this)
 }
 
@@ -68,7 +68,7 @@ export class PageBaseClass {
 
   constructor($pageContext) {
     PageBase($pageContext)
-    this.$computed = $pageContext.computed; 
+    this.$computed = $pageContext.computed;
     this.$context = $pageContext;
     this.__data = $pageContext.data || {}
 
@@ -81,7 +81,7 @@ export class PageBaseClass {
 
   __setData(obj = {}) {
     this.__data = Object.assign({}, this.__data, obj)
-   
+
     this.$context.setData(this.__data);
   }
 

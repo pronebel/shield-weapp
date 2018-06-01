@@ -1,8 +1,10 @@
 // pages/demo/toptip.js
 import { TopTip} from '../../components/index.js'
-
+import WxApp from '../../shield/component/index.js'
+import VueDemo from './vue.js'
 
 Page({
+  $type: 'page',
   ...TopTip,
   /**
    * 页面的初始数据
@@ -15,11 +17,12 @@ Page({
       type:'success'
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  components: {},
   onLoad: function (options) {
-  
+    this.components = {
+      TopPage: new WxApp.Component('TopPage', VueDemo, this),
+    }
+    console.log('Inject Components', this.components.TopPage)
   },
 
   /**
@@ -29,45 +32,6 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

@@ -1,4 +1,4 @@
-// pages/index/index.js
+// business/components/test/demo.js
 Page({
 
   /**

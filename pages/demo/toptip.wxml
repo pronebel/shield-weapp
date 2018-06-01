@@ -1,7 +1,8 @@
 <import src="/components/toptip/toptip.wxml" />
-
+<import src="./vue.wxml" />
 
 
 <template is="toptip" data="{{tip:simTopTip}}" />
 
 <view bindtap="showTip">tip</view>
+<template is="VueComponent" data="{{TopPage}}" />

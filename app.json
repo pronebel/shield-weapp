@@ -1,12 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/demo/toptip",
     "pages/topbar/index",
     "pages/logs/logs",
-
     "pages/shopcart/index",
-    "pages/swiper/index",
-    "pages/demo/toptip"
+    "pages/swiper/index"
+ 
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -21,7 +20,7 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/demo/toptip",
         "text": "接口"
       },
       {
